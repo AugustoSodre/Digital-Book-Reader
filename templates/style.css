@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --neutralColor: #EEEEEE;
+    --primaryColor : #686D76;
+    --secondaryColor : #373A40;
+    --specialColor: #DC5F00;
+}
+
+body{
+    background-color: var(--secondaryColor);
+}
+
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 50px;
+    padding: 20px;
+    background-color: var(--neutralColor);
+    color: var(--specialColor);
+}
+
+.navbar-brand{
+    color: var(--specialColor);
+}
+
+.logo{
+    border-radius: 10px;
+    width: 12%;
+    color-scheme: var(--specialColor);
+}
+
+.container{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--primaryColor);
+}
+
+.card{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--secondaryColor);
+    border-radius: 10px;
+    gap: 10px;
+}
+
+
+.card-footer{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.card-footer > a{
+    transition: 8ms;
+    color: var(--specialColor);
+}
+
+.card-footer > a:hover{
+    transition: 8ms;
+    color: #b74f00fc;
+}
+
+.card-footer > a:active{
+    transition: 8ms;
+    color: #f5964efc;
+}
+
+.card-footer > a:visited{
+    transition: 8ms;
+    color: var(--specialColor);
+}
+
+.table{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--primaryColor);
+    border-radius: 10px;
+}
+
+.table > thead> tr{
+    display: flex;
+    gap: 10px;
+}
+
+.table > tbody > tr{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.btn{
+    padding: 8px;
+}
+
+.btn-info:link {
+    transition: 8ms;
+    color: var(--specialColor);
+}
+
+.btn-info:hover{
+    transition: 8ms;
+    color: #b74f00fc;
+}
+
+.btn-info:active{
+    transition: 8ms;
+    color: #f5964efc;
+}
+
+.btn-info:visited{
+    transition: 8ms;
+    color: var(--specialColor);
+}
+
+.btn-danger{
+    transition: 8ms;
+    background-color: var(--neutralColor);
+    border: 0;
+    border-radius: 10px;
+    border-style: none;
+    color: var(--specialColor);
+}
+
+.btn-danger:hover{
+    transition: 8ms;
+    background-color: rgb(215, 215, 215);
+    border: 0;
+    border-radius: 10px;
+    border-style: none;
+    color: var(--specialColor);
+    cursor:pointer;
+}
+
+.btn-danger:active{
+    transition: 8ms;
+    background-color: rgb(235, 233, 233);
+    border: 0;
+    border-radius: 10px;
+    border-style: none;
+    color: var(--specialColor);
+}
+
+.btn-danger:visited{
+    transition: 8ms;
+    background-color: var(--neutralColor);
+    border: 0;
+    border-radius: 10px;
+    border-style: none;
+    color: var(--specialColor);
+}
+
+footer{
+    color: var(--neutralColor);
+    background-color: var(--specialColor);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
