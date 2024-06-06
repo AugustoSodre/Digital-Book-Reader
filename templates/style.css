@@ -9,7 +9,15 @@
     --primaryColor : #AF8F6F;
     --secondaryColor : #74512D;
     --specialColor: #543310;
-    --fontFamily: 
+    --darkRed: #742D2D;
+    --darkBlue: #102354;
+    --fontFamily: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+}
+
+.font{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
 }
 
 header{
@@ -17,7 +25,13 @@ header{
     align-items: center;
     justify-content: space-around;
     color: var(--neutralColor);
-    padding: 10px;
+    font-size: larger;
+    padding: 20px;
+}
+
+.headerTitle{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
 }
 
 .navbar{
@@ -26,17 +40,73 @@ header{
     justify-content: space-around;
     padding: 20px;
     background-color: var(--neutralColor);
+}
+
+nav > a{
     color: var(--specialColor);
 }
 
-.navbar-brand{
-    color: var(--specialColor);
+nav> a:hover{
+    color: #110b04;
+}
+
+nav > a:active{
+    color: #df8a2e;
+}
+
+nav > a:visited{
+    color: #543310;
 }
 
 .logo{
     border-radius: 10px;
     width: 12%;
     color-scheme: var(--specialColor);
+}
+
+.btn-login{
+    transition: 8ms;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: var(--darkRed);
+    color: var(--neutralColor);
+    
+}
+
+.btn-login:hover{
+    transition: 8ms;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: #521f1f;
+    color: #F8F4E1;
+    cursor: pointer;
+    
+}
+
+.btn-login:active{
+    transition: 8ms;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: #9c3c3c;
+    color: #F8F4E1;
+    
+}
+
+.btn-login:visited{
+    transition: 8ms;
+    width: 150px;
+    height: 50px;
+    border-radius: 25px;
+    border-style: none;
+    background-color: var(--darkRed);
+    color: var(--neutralColor);
+    
 }
 
 body{
@@ -70,22 +140,22 @@ body{
     padding: 20px;
 }
 
-.card-footer > a{
+.link  > a{
     transition: 8ms;
     color: var(--specialColor);
 }
 
-.card-footer > a:hover{
+.link  > a:hover{
     transition: 8ms;
-    color: #b74f00fc;
+    color: #201508;
 }
 
-.card-footer > a:active{
+.link > a:active{
     transition: 8ms;
-    color: #f5964efc;
+    color: #784a19;
 }
 
-.card-footer > a:visited{
+.link > a:visited{
     transition: 8ms;
     color: var(--specialColor);
 }
