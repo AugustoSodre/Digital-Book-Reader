@@ -5,21 +5,25 @@
 }
 
 :root{
-    --neutralColor: #EEEEEE;
-    --primaryColor : #686D76;
-    --secondaryColor : #373A40;
-    --specialColor: #DC5F00;
+    --neutralColor: #F8F4E1;
+    --primaryColor : #AF8F6F;
+    --secondaryColor : #74512D;
+    --specialColor: #543310;
+    --fontFamily: 
 }
 
-body{
-    background-color: var(--secondaryColor);
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color: var(--neutralColor);
+    padding: 10px;
 }
 
 .navbar{
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 50px;
+    justify-content: space-around;
     padding: 20px;
     background-color: var(--neutralColor);
     color: var(--specialColor);
@@ -33,6 +37,10 @@ body{
     border-radius: 10px;
     width: 12%;
     color-scheme: var(--specialColor);
+}
+
+body{
+    background-color: var(--secondaryColor);
 }
 
 .container{
