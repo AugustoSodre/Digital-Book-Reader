@@ -25,6 +25,7 @@ header{
     align-items: center;
     justify-content: space-around;
     color: var(--neutralColor);
+    background-color: var(--secondaryColor);
     font-size: larger;
     padding: 20px;
 }
@@ -250,4 +251,13 @@ footer{
     align-items: center;
     justify-content: space-around;
     padding: 20px;
+}
+
+.login{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    background-color: var(--secondaryColor);
 }
