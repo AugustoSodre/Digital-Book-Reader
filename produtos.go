@@ -1,14 +1,13 @@
 package main
 
-type Produto struct {
-	Id         int
-	Nome       string
-	Descricao  string
-	Preco      float64
-	Quantidade int
+type Livro struct {
+	Id      int
+	Nome    string
+	Autor   string
+	Sinopse string
 }
 
-func BuscarProdutos() []Produto {
+func BuscarProdutos() []Livro {
 
 	db := ConectaComBancoDeDados()
 
@@ -17,24 +16,22 @@ func BuscarProdutos() []Produto {
 		panic(err.Error())
 	}
 
-	p := Produto{}
-	produtos := []Produto{}
+	p := Livro{}
+	produtos := []Livro{}
 
 	for selectDeTodosOsProdutos.Next() {
-		var id, quantidade int
-		var nome, descricao string
-		var preco float64
+		var id int
+		var nome_livro, autor_livro, sinopse_livro string
 
-		err = selectDeTodosOsProdutos.Scan(&id, &nome, &descricao, &preco, &quantidade)
+		err = selectDeTodosOsProdutos.Scan(&id, &nome_livro, &autor_livro, &sinopse_livro)
 		if err != nil {
 			panic(err.Error())
 		}
 
 		p.Id = id
-		p.Nome = nome
-		p.Descricao = descricao
-		p.Preco = preco
-		p.Quantidade = quantidade
+		p.Nome = nome_livro
+		p.Autor = autor_livro
+		p.Sinopse = sinopse_livro
 
 		produtos = append(produtos, p)
 	}
@@ -43,15 +40,15 @@ func BuscarProdutos() []Produto {
 	return produtos
 }
 
-func CreateProdict(nome, descricao string, preco float64, quantidade int) {
+func CreateProdict(nome, autor, sinopse string) {
 	db := ConectaComBancoDeDados()
 
-	insereDadosNoBanco, err := db.Prepare("insert into produtos(nome, descricao, preco, quantidade) values($1, $2, $3, $4)")
+	insereDadosNoBanco, err := db.Prepare("insert into produtos(nome, autor, sinopse) values($1, $2, $3)")
 	if err != nil {
 		panic(err.Error())
 	}
 
-	insereDadosNoBanco.Exec(nome, descricao, preco, quantidade)
+	insereDadosNoBanco.Exec(nome, autor, sinopse)
 	defer db.Close()
 }
 func DeleteProduct(id string) {
@@ -68,7 +65,7 @@ func DeleteProduct(id string) {
 	defer db.Close()
 }
 
-func EditProduct(id string) Produto {
+func EditProduct(id string) Livro {
 	db := ConectaComBancoDeDados()
 
 	productDB, err := db.Query("select * from produtos where id=$1", id)
@@ -77,14 +74,13 @@ func EditProduct(id string) Produto {
 		panic(err.Error())
 	}
 
-	productUpdate := Produto{}
+	productUpdate := Livro{}
 
 	for productDB.Next() {
-		var id, quantidade int
-		var nome, descricao string
-		var preco float64
+		var id int
+		var nome, autor, sinopse string
 
-		err = productDB.Scan(&id, &nome, &descricao, &preco, &quantidade)
+		err = productDB.Scan(&id, &nome, &autor, &sinopse)
 
 		if err != nil {
 			panic(err.Error())
@@ -92,9 +88,8 @@ func EditProduct(id string) Produto {
 
 		productUpdate.Id = id
 		productUpdate.Nome = nome
-		productUpdate.Descricao = descricao
-		productUpdate.Preco = preco
-		productUpdate.Quantidade = quantidade
+		productUpdate.Autor = autor
+		productUpdate.Sinopse = sinopse
 	}
 
 	defer db.Close()
@@ -102,16 +97,16 @@ func EditProduct(id string) Produto {
 	return productUpdate
 }
 
-func UpdateProduct(id int, nome, descricao string, preco float64, quantidade int) {
+func UpdateProduct(id int, nome, autor, sinopse string) {
 	db := ConectaComBancoDeDados()
 
-	updateProduct, err := db.Prepare("update produtos set nome=$1, descricao=$2, preco=$3, quantidade=$4 where id=$5")
+	updateProduct, err := db.Prepare("update produtos set nome=$1, autor=$2, sinopse=$3 where id=$4")
 
 	if err != nil {
 		panic(err.Error())
 	}
 
-	updateProduct.Exec(nome, descricao, preco, quantidade, id)
+	updateProduct.Exec(nome, autor, sinopse, id)
 
 	defer db.Close()
 }

@@ -21,23 +21,10 @@ func CreateProduct(w http.ResponseWriter, r *http.Request) {
 func Insert(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		nome := r.FormValue("nome")
-		descricao := r.FormValue("descricao")
-		preco := r.FormValue("preco")
-		quantidade := r.FormValue("quantidade")
+		autor := r.FormValue("autor")
+		sinopse := r.FormValue("sinopse")
 
-		precoConv, err := strconv.ParseFloat(preco, 64)
-
-		if err != nil {
-			log.Println("Erro ao converter o preço", err)
-		}
-
-		quantidadeConv, err := strconv.Atoi(quantidade)
-
-		if err != nil {
-			log.Println("Erro ao converter a quantidade", err)
-		}
-
-		CreateProdict(nome, descricao, precoConv, quantidadeConv)
+		CreateProdict(nome, autor, sinopse)
 	}
 
 	http.Redirect(w, r, "/", 301)
@@ -61,26 +48,15 @@ func Update(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		id := r.FormValue("id")
 		nome := r.FormValue("nome")
-		descricao := r.FormValue("descricao")
-		preco := r.FormValue("preco")
-		quantidade := r.FormValue("quantidade")
+		autor := r.FormValue("autor")
+		sinopse := r.FormValue("sinopse")
 
 		idConv, err := strconv.Atoi(id)
 		if err != nil {
 			log.Println("Erro ao converter o Id para int: ", err)
 		}
 
-		precoConv, err := strconv.ParseFloat(preco, 64)
-		if err != nil {
-			log.Println("Erro ao converter o preco em float: ", err)
-		}
-
-		quantidadeConv, err := strconv.Atoi(quantidade)
-		if err != nil {
-			log.Println("Erro ao converter a quantidade em int: ", err)
-		}
-
-		UpdateProduct(idConv, nome, descricao, precoConv, quantidadeConv)
+		UpdateProduct(idConv, nome, autor, sinopse)
 
 	}
 

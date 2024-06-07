@@ -1,5 +1,9 @@
 {{define "Index"}}
 
+{{template "_head"}}
+{{template "_header"}}
+{{template "_menu"}}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,18 +36,18 @@
                 <table class="table table-striped table-hover mb-0">
                     <thead>
                         <tr>
-                            <th class="font">Nome</th>
+                            <th class="font">Name</th>
                             <th class="font">Autor</th>
-                            <th class="font">Sinopse</th>
+                            <th class="font">Synopsis</th>
                             <th class="font">Quantidade</th>
                         </tr>
                     </thead>
                     <tbody>
                         {{range .}}
                         <tr>
-                            <td class="font">{{.Nome}}</td>
-                            <td class="font">{{.Descricao}}</td>
-                            <td class="font">{{.Preco}}</td>
+                            <td class="font">{{.nome_livro}}</td>
+                            <td class="font">{{.autor_livro}}</td>
+                            <td class="font">{{.sinopse_livro}}</td>
                             <td class="font">{{.Quantidade}}</td>
 
                             <td class="link font"><a href="edit?id={{.Id}}" class="btn btn-info">Editar</a></td>
