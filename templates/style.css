@@ -126,12 +126,13 @@ body{
 .card{
     display: flex;
     align-items:center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-direction: column;
     padding: 20px;
     background-color: var(--secondaryColor);
     border-radius: 10px;
     gap: 10px;
+    min-height: 60vh;
 }
 
 
@@ -288,4 +289,20 @@ footer{
     min-height: 59vh;
     color: var(--neutralColor);
     background-color: var(--primaryColor);
+}
+
+.create-product-container{
+    min-height: 60vh;
+}
+
+.create-product-container >form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.row{
+    padding: 20px;
+    width: 80%;
 }
