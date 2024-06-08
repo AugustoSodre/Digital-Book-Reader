@@ -253,11 +253,28 @@ footer{
     padding: 20px;
 }
 
-.login{
+.login_body{
+    min-height: 100vh;
+    display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    text-align: center;
-
     background-color: var(--secondaryColor);
+    
+}
+
+.UI{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.UI > h1{
+    font-size: x-large;
+}
+
+.form-control{
+    width: 100%;
 }

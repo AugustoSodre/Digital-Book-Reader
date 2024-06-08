@@ -1,8 +1,6 @@
 <!--- {{define "Login"}} -->
 <!--- {{template "_head"}} -->
 
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,32 +15,34 @@
         body{
             background-image: url(bg/Login_Rectangle_BG.png);
             background-repeat: no-repeat;
-            background-position: 400px 180px;
-            background-size: 1050px 700px;
+            background-size: 65%;
+            background-position: center;
         }
     </style>
+    
 </head>
 
-<body class = "login">
-    <header class = "header">
-        <h1 class="headerTitle">
-            Da Digital Catalog
-        </h1>
-        <img src="logo/Logo.png" alt="logo" width="11%">
-    </header>
+<body class = "login_body">
 
     <div class="UI">
-        <h2>
+        <h1 class="font">
             Welcome to Da Digital Catalog!
-        </h2>
-        <div>
-            Username
+        </h1>
+
+        <div class="username">
+            <label for="Username" class="font">Username: </label>
+            <input type="text" name="username" class="form-control">
         </div>
-        <div>
-            Login
+
+        <div class="password">
+            <label for="Password" class="font">Password: </label>
+            <input type="text" name="password" class="form-control">
         </div>
+
+        <button type="submit" value="salvar" class="btn btn-login font">Login</button>
+
+        <a href="" class="a font">Don't have an account? Sign-in!</a>
     </div>
-    
 </body>
 
 
