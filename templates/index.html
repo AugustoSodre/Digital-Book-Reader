@@ -25,7 +25,7 @@
 
 <nav class="navbar navbar-light bg-light mb-4">
     <a class="font link" href="index.html">Main page</a>
-    <a class="font link"href="">About us</a>
+    <a class="font link"href="about-us.html">About us</a>
     <a href="login.html"><button class="btn-login font">Log in</button></a>
 </nav>
 
@@ -39,7 +39,6 @@
                             <th class="font">Name</th>
                             <th class="font">Autor</th>
                             <th class="font">Synopsis</th>
-                            <th class="font">Quantidade</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,10 +47,9 @@
                             <td class="font">{{.nome_livro}}</td>
                             <td class="font">{{.autor_livro}}</td>
                             <td class="font">{{.sinopse_livro}}</td>
-                            <td class="font">{{.Quantidade}}</td>
 
-                            <td class="link font"><a href="edit?id={{.Id}}" class="btn btn-info">Editar</a></td>
-                            <td class="font"><button onclick="onDelete('{{.Id}}')" class="btn btn-danger">Deletar</button></td>
+                            <td class="link font"><a href="edit?id={{.Id}}" class="btn btn-info font">Edit</a></td>
+                            <td class="font"><button onclick="onDelete('{{.Id}}')" class="btn btn-danger font">Delete</button></td>
                         </tr>
                         {{end}}
                     </tbody>
@@ -59,7 +57,7 @@
             </div>
         </section>
         <div class="card-footer font link">
-            <a href="criar-produto.html" class="btn btn-primary mb-2">Criar novo produto</a>
+            <a href="criar-produto.html" class="btn btn-primary mb-2">Create new item</a>
         </div>
     </div>
 </body>
@@ -75,7 +73,7 @@
 
 <script>
     function onDelete(id){
-        let resposta = confirm("Tem certeza que deseja deletar o produto?")
+        let resposta = confirm("Are you sure you want to dele this item?")
         if (resposta){
             window.location = "/delete?id=" + id
         }

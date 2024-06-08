@@ -278,3 +278,14 @@ footer{
 .form-control{
     width: 100%;
 }
+
+.about-us-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    min-height: 59vh;
+    color: var(--neutralColor);
+    background-color: var(--primaryColor);
+}
